@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "wayou.vscode-todo-highlight",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "rvest.vs-code-prettier-eslint",
+    "esbenp.prettier-vscode",
+    "wix.vscode-import-cost",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-complete-tag",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "eamodio.gitlens",
+    "dsznajder.es7-react-js-snippets"
+  ]
+}
