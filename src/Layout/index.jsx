@@ -1,7 +1,6 @@
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
-
-import LayoutStyled from './styled';
+import { LayoutStyled } from './styled';
 
 function LayoutCommon({ children }) {
   return (
