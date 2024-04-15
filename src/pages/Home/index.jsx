@@ -9,9 +9,8 @@ function index() {
   const redirect = useRedirect();
 
   const handleGoToDetail = (id) => {
-    redirect.push(routes.product + `/${id}`);
+    redirect.push(`${routes.product}/${id}`);
   };
-
   return (
     <HomeStyled>
       <div className="inner">
@@ -19,11 +18,10 @@ function index() {
           <section className="sec-cmn" key={index}>
             <h2 className="headline1">{productConfig[key].title}</h2>
             <ProductList lists={productConfig[key].list} />
-            <div
-              onClick={() => handleGoToDetail(productConfig[key].urlDetail)}
-              style={{ textAlign: 'center' }}
-            >
-              <div className="btn">More</div>
+            <div style={{ textAlign: 'center' }}>
+              <div className="btn" onClick={() => handleGoToDetail(productConfig[key].id)}>
+                More
+              </div>
             </div>
           </section>
         ))}

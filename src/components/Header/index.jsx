@@ -8,22 +8,27 @@ const NAVI = [
   {
     title: 'Góp ý',
     link: '',
+    active: true,
   },
   {
     title: 'Kiểm tra đơn hàng',
     link: '',
+    active: false,
   },
   {
     title: 'CHĂM SÓC KHÁCH HÀNG',
     link: '',
+    active: false,
   },
   {
     title: 'ĐĂNG NHẬP',
     link: '',
+    active: false,
   },
   {
     title: 'ĐĂNG KÝ',
     link: '',
+    active: false,
   },
 ];
 
@@ -51,7 +56,7 @@ function Header() {
         </div>
         <div className="navi">
           {NAVI.map((item, index) => (
-            <div key={index} className="navi__item">
+            <div key={index} className={`navi__item ${item.active ? 'active' : ''}`}>
               {item.title}
             </div>
           ))}

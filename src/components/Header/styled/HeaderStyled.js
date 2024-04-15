@@ -75,7 +75,6 @@ const HeaderStyled = styled.div`
       font-weight: bold;
       position: relative;
       cursor: pointer;
-      &.active,
       &::before {
         content: "";
         position: absolute;
@@ -85,6 +84,11 @@ const HeaderStyled = styled.div`
         height: 4px;
         background-color: #5fcccf;
         transition: width 0.3s ease-out;
+      }
+      &.active {
+        &::before {
+          width: 100%;
+        }
       }
       &:hover {
         &::before {
