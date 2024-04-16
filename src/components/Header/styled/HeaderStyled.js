@@ -45,7 +45,7 @@ const HeaderStyled = styled.div`
         justify-content: center;
         height: 100%;
         width: 60px;
-        background-color: #f57224;
+        background-color: #5fcccf;
         cursor: pointer;
         &:hover {
           opacity: 0.7;
@@ -95,6 +95,38 @@ const HeaderStyled = styled.div`
           width: 100%;
         }
       }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .header {
+      &__content {
+        margin-bottom: 0;
+        .logo {
+          display: none;
+        }
+        &--right {
+          width: 100%;
+        }
+      }
+      &__search {
+        position: relative;
+        width: calc(100% - 20px);
+        margin-right: 10px;
+        border-radius: 5px;
+        .btn-search {
+          position: absolute;
+          width: 40px;
+          img {
+            width: 20px;
+          }
+        }
+      }
+      &__cart {
+        width: 20px;
+      }
+    }
+    .navi {
+      display: none;
     }
   }
 `;
