@@ -15,6 +15,13 @@ const UIInputStyled = styled.div`
     background: #eff0f5;
     border-radius: 2px;
   }
+  @media screen and (max-width: 768px) {
+    input {
+      padding: 8px 15px;
+      font-size: 1.2em;
+      border-radius: 2px;
+    }
+  }
 `;
 
 export default UIInputStyled;
