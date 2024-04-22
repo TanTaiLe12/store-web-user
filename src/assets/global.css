@@ -6,7 +6,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: 'HelveticaNeue', 'Helvetica Neue', 'Roboto', 'Droid Sans', Arial, sans-serif;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Roboto", "Droid Sans", Arial, sans-serif;
   line-height: 1.4;
   color: #333;
 }
@@ -35,7 +35,7 @@ img {
 .headline1 {
   margin-bottom: 30px;
   padding: 10px 20px;
-  background: linear-gradient(90deg, rgba(95, 204, 207, 1) 32%, rgba(76, 201, 204, 1) 70%);
+  background: linear-gradient(90deg, rgb(95, 204, 207) 32%, rgb(76, 201, 204) 70%);
   color: #fff;
   font-size: 2.8rem;
 }
@@ -54,26 +54,14 @@ img {
   text-align: center;
   cursor: pointer;
   transition: background 0.3s linear, color 0.3s linear;
-  &:hover {
-    background-color: #5fcccf;
-    color: #fff;
-  }
+}
+.btn:hover {
+  background-color: #5fcccf;
+  color: #fff;
 }
 
 @media screen and (max-width: 768px) {
   .inner {
     padding: 0 10px;
   }
-  .headline1 {
-    margin-bottom: 25px;
-    padding: 7px 15px;
-    font-size: 2rem;
-  }
-  .sec-cmn {
-    margin-bottom: 35px;
-  }
-  .btn {
-    min-width: 120px;
-    font-size: 1.4rem;
-  }
-}
+}/*# sourceMappingURL=global.css.map */
