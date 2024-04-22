@@ -1,8 +1,8 @@
 import UIInput from '../UIInput';
 import { HeaderStyled } from './styled';
-const ICON_LOGO = '/public/images/logo.svg';
-const ICON_SEARCH = '/public/images/search.svg';
-const ICON_CART = '/public/images/icon_cart.png';
+const ICON_LOGO = '/images/logo.svg';
+const ICON_SEARCH = '/images/search.svg';
+const ICON_CART = '/images/icon_cart.png';
 
 const NAVI = [
   {
