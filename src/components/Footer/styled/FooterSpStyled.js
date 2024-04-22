@@ -25,7 +25,7 @@ const FooterSpStyled = styled.div`
       text-decoration: none;
       font-size: 1.2rem;
       img {
-        width: 45%;
+        width: 35%;
         aspect-ratio: 148/148;
       }
       span {

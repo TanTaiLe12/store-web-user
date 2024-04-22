@@ -16,17 +16,17 @@ const NAVI = [
     active: false,
   },
   {
-    title: 'CHĂM SÓC KHÁCH HÀNG',
+    title: 'Chăm sóc khách hàng',
     link: '',
     active: false,
   },
   {
-    title: 'ĐĂNG NHẬP',
+    title: 'Đăng nhập',
     link: '',
     active: false,
   },
   {
-    title: 'ĐĂNG KÝ',
+    title: 'Đăng ký',
     link: '',
     active: false,
   },
