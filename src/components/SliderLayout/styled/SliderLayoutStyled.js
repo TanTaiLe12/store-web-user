@@ -21,7 +21,7 @@ const SliderLayoutStyled = styled.div`
     }
   }
   .swiper img {
-    object-fit: contain;
+    object-fit: cover;
   }
   @media screen and (max-width: 768px) {
     margin-bottom: 30px;
