@@ -3,11 +3,20 @@ import useRedirect from '~/hooks/useRedirect';
 import config from '~/config';
 import SliderLayout from '~/components/SliderLayout';
 import { HomeStyled } from './styled';
+import AuthApi from '../../api/v1/authApi';
+import { useEffect } from 'react';
 
 const { productConfig, routes } = config;
-
+const authApi = new AuthApi();
 function index() {
   const redirect = useRedirect();
+
+  useEffect(() => {
+    (async () => {
+      const test = await authApi.listAll();
+      console.log(test);
+    })();
+  }, []);
 
   const handleGoToDetail = (id) => {
     redirect.push(`${routes.product}/${id}`);
