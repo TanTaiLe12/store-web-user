@@ -14,9 +14,8 @@ function index() {
   };
   return (
     <HomeStyled>
+      <SliderLayout />
       <div className="inner">
-        <SliderLayout />
-
         {Object.keys(productConfig)?.map((key, index) => (
           <section className="sec-cmn" key={index}>
             <h2 className="headline1">{productConfig[key].title}</h2>
