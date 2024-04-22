@@ -4,22 +4,22 @@ import { FooterSpStyled } from '../styled';
 const F_NAVIGATE = [
   {
     title: 'Home',
-    icon: '/public/images/icon_home.svg',
+    icon: '/images/icon_home.svg',
     link: '/',
   },
   {
     title: 'Categories',
-    icon: '/public/images/icon_category.svg',
+    icon: '/images/icon_category.svg',
     link: '/categories',
   },
   {
     title: 'Notification',
-    icon: '/public/images/icon_notify.svg',
+    icon: '/images/icon_notify.svg',
     link: '/notification',
   },
   {
     title: 'Account',
-    icon: '/public/images/icon_accout.svg',
+    icon: '/images/icon_accout.svg',
     link: '/account',
   },
 ];
