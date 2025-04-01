@@ -18,7 +18,7 @@ function Apps() {
                 key={index}
                 path={route.path}
                 element={
-                  <Layout>
+                  <Layout isHeader={route.isHeader ?? true}>
                     <Page />
                   </Layout>
                 }

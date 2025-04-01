@@ -13,7 +13,12 @@ const UIInputStyled = styled.div`
     border: none;
     outline: none;
     background: #eff0f5;
-    border-radius: 2px;
+    border-radius: 4px;
+  }
+  .text-error {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #A71218;
   }
   @media screen and (max-width: 768px) {
     input {

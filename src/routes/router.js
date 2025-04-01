@@ -1,8 +1,9 @@
 import LayoutCommon from '~/Layout';
 import config from '~/config';
 import Home from '~/pages/Home';
-import Login from '~/pages/Login';
 import ProductDetail from '~/pages/ProductDetail';
+import FormLogin from '~/pages/Login';
+import FormRegister from '~/pages/Register';
 
 const { routes } = config;
 const publicRoutes = [
@@ -13,8 +14,15 @@ const publicRoutes = [
   },
   {
     path: routes.login,
-    component: Login,
+    component: FormLogin,
     layout: LayoutCommon,
+    isHeader: false,
+  },
+  {
+    path: routes.register,
+    component: FormRegister,
+    layout: LayoutCommon,
+    isHeader: false,
   },
   {
     path: routes.product,

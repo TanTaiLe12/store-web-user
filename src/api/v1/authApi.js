@@ -8,7 +8,15 @@ class AuthApi extends BaseApi {
 
   login(resource) {
     return axiosClient({
-      url: `${this.uri}/login`,
+      url: `${this.uri}login`,
+      method: 'POST',
+      data: resource,
+    });
+  }
+
+  register(resource) {
+    return axiosClient({
+      url: `${this.uri}register`,
       method: 'POST',
       data: resource,
     });

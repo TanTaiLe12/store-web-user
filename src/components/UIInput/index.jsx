@@ -1,9 +1,10 @@
 import UIInputStyled from './styled/UIInputStyled';
 
-function UIInput({ type, value, onChange, placeholder }) {
+function UIInput({ type = 'text', placeholder, name = '', register = () => {}, message = '' }) {
   return (
     <UIInputStyled>
-      <input type={type} value={value} onChange={onChange} placeholder={placeholder} />
+      <input type={type} placeholder={placeholder} {...register(name)} />
+      {message && <p className="text-error">{message}</p>}
     </UIInputStyled>
   );
 }
