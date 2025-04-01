@@ -38,9 +38,7 @@ axiosClient.interceptors.response.use(
         console.log('404 error handler!')
         break
       case 500:
-        if (process.env.NODE_ENV === 'production') {
           console.log('500 error handler!')
-        }
         break
       case 429:
         break
