@@ -61,7 +61,7 @@ function Header() {
   const handleMenu = (key) => {
     switch (key) {
       case TYPE_HOME:
-        redirect.push();
+        redirect.push(routes.home);
         break;
       case TYPE_CATEGORY:
         redirect.push(routes.categories.root);

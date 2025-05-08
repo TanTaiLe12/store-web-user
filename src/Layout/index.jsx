@@ -1,19 +1,22 @@
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
-import { LayoutStyled } from './styled';
-import LayoutAdminStyled from './styled/LayoutAdminStyled';
+import { LayoutStyled, LayoutAdminStyled } from './styled';
 
-function LayoutCommon({ children, isHeader = true }) {
+function LayoutCommon({ children, isHeader = true, isAdmin = false }) {
   return (
     <div>
-      {isHeader ? (
-        <LayoutStyled>
-          <Header />
+      {isAdmin ? (
+        <LayoutAdminStyled>
           <div>{children}</div>
-          <Footer />
-        </LayoutStyled>
+        </LayoutAdminStyled>
       ) : (
-        <LayoutAdminStyled>{children}</LayoutAdminStyled>
+        <div style={{ height: '100%' }}>
+          <LayoutStyled isHeader={isHeader}>
+            {isHeader && <Header />}
+            {children}
+          </LayoutStyled>
+          <Footer />
+        </div>
       )}
     </div>
   );
