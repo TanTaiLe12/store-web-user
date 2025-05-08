@@ -6,6 +6,8 @@ import useRedirect from '~/hooks/useRedirect';
 import FormLoginStyled from './styled/FormLoginStyled';
 import AuthApi from '~/api/v1/authApi';
 import UIInput from '~/components/UIInput';
+import { setToken } from '~/utils/auth';
+
 const { routes } = config;
 
 const authApi = new AuthApi();
@@ -32,7 +34,12 @@ function FormLogin() {
 
   const onSubmit = async (data) => {
     try {
-      await authApi.login(data);
+      const { access_token } = await authApi.login(data);
+      console.log(access_token);
+
+      if (access_token) {
+        setToken(access_token);
+      }
     } catch (error) {
       console.log(error);
     } finally {

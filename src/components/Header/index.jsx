@@ -2,7 +2,7 @@ import config from '~/config';
 import UIInput from '../UIInput';
 import { HeaderStyled } from './styled';
 import AuthApi from '~/api/v1/authApi';
-
+import { getToken, removeToken } from '~/utils/auth';
 import useRedirect from '~/hooks/useRedirect';
 import Modal from '../UIModal';
 import { useState } from 'react';
@@ -17,7 +17,7 @@ const NAVI = [
     show: true,
   },
   {
-    title: 'Product',
+    title: 'Categories',
     type: 2,
     show: true,
   },
@@ -44,7 +44,7 @@ const NAVI = [
 ];
 
 const TYPE_HOME = 1;
-const TYPE_PRODUCT = 2;
+const TYPE_CATEGORY = 2;
 const TYPE_ODER = 3;
 const TYPE_ABOUT = 4;
 const TYPE_LOGIN = 5;
@@ -63,8 +63,8 @@ function Header() {
       case TYPE_HOME:
         redirect.push();
         break;
-      case TYPE_PRODUCT:
-        redirect.push();
+      case TYPE_CATEGORY:
+        redirect.push(routes.categories.root);
         break;
       case TYPE_ODER:
         redirect.push();
@@ -84,11 +84,14 @@ function Header() {
   };
   const handleLogout = async () => {
     try {
-      await authApi.logout();
+      const accessToken = getToken();
+      if (accessToken) {
+        await authApi.logout(accessToken);
+        await removeToken();
+        redirect.push(routes.login);
+      }
     } catch (error) {
       // error
-    } finally {
-      redirect.push(routes.login);
     }
   };
   return (

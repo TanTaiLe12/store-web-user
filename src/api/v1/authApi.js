@@ -22,10 +22,11 @@ class AuthApi extends BaseApi {
     });
   }
 
-  logout() {
+  logout(accessToken) {
     return axiosClient({
-      url: `${this.uri}/logout`,
-      method: 'GET',
+      url: `${this.uri}logout`,
+      method: 'POST',
+      data: accessToken,
     });
   }
 
