@@ -14,6 +14,7 @@ const routes = {
 const routesAdmin = {
   login: '/admin/login',
   register: '/admin/register',
+  dashboard: '/admin/dashboard',
   home: '/admin',
   categories: {
     root: '/admin/categories',

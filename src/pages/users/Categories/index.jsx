@@ -3,7 +3,7 @@ import CategoriesApi from '~/api/v1/categoriesApi';
 
 const categoriesApi = new CategoriesApi();
 const formValue = {
-  name: 'test2',
+  name: 'test2 test2',
   description: 'test2',
 };
 

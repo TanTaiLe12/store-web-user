@@ -1,4 +1,4 @@
-import LayoutCommon from '~/Layout';
+import {LayoutUser} from '~/Layout';
 import config from '~/config';
 import Home from '~/pages/users/Home';
 import Product from '~/pages/users/Product';
@@ -7,35 +7,33 @@ import FormLogin from '~/pages/auth/Login';
 import FormRegister from '~/pages/auth/Register';
 
 const { routes } = config;
-const publicRoutes = [
+
+export const usersRoutes = [
   {
     path: routes.home,
     component: Home,
-    layout: LayoutCommon,
+    layout: LayoutUser,
   },
   {
     path: routes.login,
     component: FormLogin,
-    layout: LayoutCommon,
-    isHeader: false,
+    layout: LayoutUser,
+    isAuth: true,
   },
   {
     path: routes.register,
     component: FormRegister,
-    layout: LayoutCommon,
-    isHeader: false,
+    layout: LayoutUser,
+    isAuth: true,
   },
   {
     path: routes.product.root,
     component: Product,
-    layout: LayoutCommon,
+    layout: LayoutUser,
   },
   {
     path: routes.categories.root,
     component: Categories,
-    layout: LayoutCommon,
+    layout: LayoutUser,
   },
 ];
-
-
-export { publicRoutes };

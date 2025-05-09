@@ -1,16 +1,17 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { publicRoutes } from './routes';
+import { usersRoutes, adminRoutes } from './routes';
 import { Provider } from 'react-redux';
 import store from './store';
 import { Fragment } from 'react';
 import './assets/global.scss';
 
 function Apps() {
+  const allRoutes = [...usersRoutes, ...adminRoutes];
   return (
     <Provider store={store}>
       <Router>
         <Routes>
-          {publicRoutes.map((route, index) => {
+          {allRoutes.map((route, index) => {
             const Layout = route.layout === null ? Fragment : route.layout;
             const Page = route.component;
             return (
@@ -18,7 +19,7 @@ function Apps() {
                 key={index}
                 path={route.path}
                 element={
-                  <Layout isHeader={route.isHeader ?? true}>
+                  <Layout isAuth={route.isAuth}>
                     <Page />
                   </Layout>
                 }

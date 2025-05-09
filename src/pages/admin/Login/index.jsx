@@ -4,11 +4,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import useRedirect from '~/hooks/useRedirect';
 import FormLoginStyled from './styled/FormLoginStyled';
-import AuthApi from '~/api/v1/authApi';
+import AuthApi from '~/api/v1/admin/authApi';
 import UIInput from '~/components/UIInput';
 import { setToken } from '~/utils/auth';
 
-const { routes } = config;
+const { routesAdmin } = config;
 
 const authApi = new AuthApi();
 
@@ -34,12 +34,11 @@ function FormLogin() {
 
   const onSubmit = async (data) => {
     try {
-      const { access_token } = await authApi.login(data);
-      console.log(access_token);
+      const res = await authApi.login(data);
 
-      if (access_token) {
-        setToken(access_token);
-        redirect.push(routes.home);
+      if (res) {
+        // setToken(access_token);
+        redirect.push(routesAdmin.dashboard);
       }
     } catch (error) {
       console.log(error);
@@ -77,9 +76,9 @@ function FormLogin() {
           <button type="submit" className="button">
             Login
           </button>
+          <div className='button' onClick={() => redirect.push(routesAdmin.register)}>register</div>
         </div>
       </form>
-      <div onClick={() => redirect.push(routes.register)}>register</div>
     </FormLoginStyled>
   );
 }
