@@ -11,13 +11,13 @@ export const adminRoutes = [
     path: routesAdmin.login,
     component: FormLogin,
     layout: LayoutAdmin,
-    isAuth: false,
+    isAuth: true,
   },
   {
     path: routesAdmin.register,
     component: AdminRegister,
     layout: LayoutAdmin,
-    isAuth: false,
+    isAuth: true,
   },
   {
     path: routesAdmin.dashboard,

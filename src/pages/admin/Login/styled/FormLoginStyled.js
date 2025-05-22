@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 
 const FormLoginStyled = styled.div`
+min-width: 510px;
   width: 50%;
   padding: 30px 25px;
   background-color: #fff;

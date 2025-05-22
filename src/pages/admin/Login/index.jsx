@@ -34,10 +34,9 @@ function FormLogin() {
 
   const onSubmit = async (data) => {
     try {
-      const res = await authApi.login(data);
-
-      if (res) {
-        // setToken(access_token);
+      const { access_token } = await authApi.login(data);
+      if (access_token) {
+        setToken(access_token);
         redirect.push(routesAdmin.dashboard);
       }
     } catch (error) {
@@ -76,7 +75,9 @@ function FormLogin() {
           <button type="submit" className="button">
             Login
           </button>
-          <div className='button' onClick={() => redirect.push(routesAdmin.register)}>register</div>
+          <div className="button" onClick={() => redirect.push(routesAdmin.register)}>
+            register
+          </div>
         </div>
       </form>
     </FormLoginStyled>
